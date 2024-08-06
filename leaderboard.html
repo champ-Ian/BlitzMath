@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="desription" content="Blitz Math is a fun math operations game! Practice your addition, subtraction, multiplication, and division.">
+
+    <title>Blitz Math | Leaderboard</title>
+
+    <link rel="stylesheet" href="css/leaderboard.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="modeSelect(1)">
+    <!-- JS File -->
+    <script src="js/leaderboard.js"></script>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="img/logo.png" alt="logo-image">
+        </a>
+        <div class="main-menu">
+            <a href="index.html">
+                <i class="fa-solid fa-calculator"></i>
+            </a>
+            <a href="leaderboard.html">
+                <i class="fa-solid fa-crown"></i>
+            </a>
+            <a href="account.html">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Leaderboard -->
+    <section class="leaderboard">
+        <h1>Leaderboard</h1>
+        <div class="modes">
+            <button class="combined" onclick="modeSelect(1)">Combined</button>
+            <button class="addition" onclick="modeSelect(2)">Addition</button>
+            <button class="subtraction" onclick="modeSelect(3)">Subtraction</button>
+            <button class="multiplication" onclick="modeSelect(4)">Multiplication</button>
+            <button class="division" onclick="modeSelect(5)">Division</button>
+        </div>
+        <div class="15">
+            <h2>Time 15</h2>
+        </div>
+        <div class="30">
+            <h2>Time 30</h2>
+        </div>
+        <div class="60">
+            <h2>Time 60</h2>
+        </div>
+        <div class="120">
+            <h2>Time 120</h2>
+        </div>
+    </section>
+
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="desription" content="Blitz Math is a fun math operations game! Practice your addition, subtraction, multiplication, and division.">
+
+    <title>Blitz Math | A Fun Math Operations Game</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="timeSelect(2), modeSelect(1), loadQuestion()">
+    <!-- JS File -->
+    <script src="js/index.js"></script>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="img/logo.png" alt="logo-image">
+        </a>
+        <div class="main-menu">
+            <a href="index.html">
+                <i class="fa-solid fa-calculator"></i>
+            </a>
+            <a href="leaderboard.html">
+                <i class="fa-solid fa-crown"></i>
+            </a>
+            <a href="account.html">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mode -->
+    <section class="setting">
+        <div class="stats">
+            <h1 class="timer">00:00</h1>
+            <button class="settingButton" 
+            onclick='document.querySelector(".popup").style.display = "block"'
+            ><i class="fa-solid fa-gear"></i>&nbsp;&nbsp;&nbsp;Test Settings</button>
+        </div>
+        <div class="popup">
+            <div class="time">
+                <h1>Time</h1>
+                <button onclick="timeSelect(1)" class="oneTime">15</button>
+                <button onclick="timeSelect(2)" class="twoTime">30</button>
+                <button onclick="timeSelect(3)" class="threeTime">60</button>
+                <button onclick="timeSelect(4)" class="fourTime">120</button>
+            </div>
+            <div class="mode">
+                <h1>Modes</h1>
+                <button onclick="modeSelect(1)" class="oneMode">Combined</button>
+                <button onclick="modeSelect(2)" class="twoMode">Addition</button>
+                <button onclick="modeSelect(3)" class="threeMode">Subtraction</button>
+                <button onclick="modeSelect(4)" class="fourMode">Multiplication</button>
+                <button onclick="modeSelect(5)" class="fiveMode">Division</button>
+            </div>
+            <button
+            onclick='document.querySelector(".popup").style.display = "none"; loadQuestion()'
+            class="done">Done</button>
+        </div>
+    </section>  
+
+    <!-- Question -->
+    <section class="question">
+        <h1 class="operation"></h1>
+        <div class="values">
+            <h1 class="firstValue"></h1>
+            <h1 class="secondValue"></h1>
+        </div>
+        <div class="line"></div>
+        <input type="number"   inputmode="numberic" 
+        class="input" oninput="typing()">
+    </section>
+
+    <!-- Start Over -->
+    <section class="startOver">
+        <button class="reload" onclick="restart()">
+            <i id = "icontext" class="fa-solid fa-rotate-right"></i> 
+        </button>
+    </section>
+
+    <!-- Test End -->
+    <section class="testEnd">
+        <div class="endMessage">
+            <h1 class="finalMessage">Wow not bad ig?</h1>
+            <div class="endStats">
+                <div>
+                    <p>Score</p>
+                    <h2 class="finalScore"></h2>
+                </div>
+                <div>
+                    <p>Qpm</p>
+                    <h2 class="finalQpm"></h2>
+                </div>
+            </div>
+            <div class="testStats">
+                <div>
+                    <p>Mode</p>
+                    <h2 class="finalMode"></h2>
+                </div>
+                <div>
+                    <p>Time</p>
+                    <h2 class="finalTime"></h2>
+                </div>
+            </div>
+            <button class="endButton" onclick="testReset()">
+                <i id = "endText" class="fa-solid fa-rotate-right"></i>
+            </button>
+        </div>
+    </section>
+
+</body>
+</html>
